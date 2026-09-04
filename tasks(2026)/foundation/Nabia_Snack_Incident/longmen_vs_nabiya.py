@@ -145,6 +145,7 @@ def main_battle_loop(
         display_status("娜比娅",nabiya_hp,NABIYA_MAX_HP)
     #
     # TODO：长门回合：
+        print("\n下面是长门的回合")
     # 1. 调用 choose_nagato_action(nagato_hp, nabiya_hp) 获取 action。
         choose_nagato_action(nagato_hp,nabiya_hp)
     # 2. action == "attack" 时，调用 calculate_attack_damage()；
@@ -154,22 +155,55 @@ def main_battle_loop(
             if check_critical_hit(base_damage):
                 base_damage *= 2
                 print("触发 BIGSEVEN")
-                
+            nabiya_hp = apply_damage(nabiaya_hp, base_damage, nabiya_defense_bonus)
+            nabiya_defense_bonus = 0
+            print("长门造成了伤害，娜比娅还剩{nabiya_hp}血量")
     # 3. action == "defend" 时，调用 calculate_defense_value()，
         else if action == "defend":
+            nagato_defense_bonus = calculate_defense_value(NAGATO_DEFEND_DICE)
+            print("长门进入防御状态，获得{nagato_defense_bonus}防御值")
             
     #    把结果保存到 nagato_defense_bonus。
     # 4. action == "special" 时，用 random.random() 判断是否小于
     #    SPECIAL_ATTACK_SUCCESS_RATE；成功时使用 SPECIAL_ATTACK_DAMAGE。
+         else:
+            if random.randint() < SPECIAL_ATTACK_SUCCESS_RATE:
+                base_damage = SPECIAL_ATTACK_DAMAGE
+                nabiya_hp = apply_damage(base_damage,nabiya_hp,nabiya_defense_bonus)
+                print("长门造成了伤害，娜比娅还剩{nabiya_hp}血量") 
+            else:
+                print("长门的攻击失败了，未造成伤害")
+           nagato_defense_bonus = 0     
     # 5. 造成伤害时统一调用 apply_damage()，并在攻击后清零对方的防御值。
     # 6. 长门行动后，如果 is_battle_over() 返回 True，使用 break 结束循环。
+            if is_battle_over(nagato_hp,nabiya_hp):
+                break
     #
     # TODO：娜比娅回合：
+        print("\n下面是娜比娅的回合")
     # 1. 调用 nabiya_ai_action(nabiya_hp) 获取 enemy_action。
+        enemy_action = nabiya_ai_action(nabiya_hp)
     # 2. attack 时调用 calculate_attack_damage()，再用 apply_damage()
+        if enemy_action =="attack":
+            enemy_damage = calculate_attack_damage(NABIYA_ATTACK_DICE)
     #    扣除长门生命值；defend 时保存娜比娅的防御值。
+            nagato_hp = apply_damage(enemy_damage,nagato_hp,nagato_defnse_bonus)
     # 3. 娜比娅的攻击或防御结束后，清零已经消耗的长门防御值。
+            nagato_defense_bonus = 0
+        else:
+            nabiya_defense_bonus = calculate_defense_value(NABIYA_DEFEND_DICE)
+            print("娜比娅进入防御状态，获得{nabiya_defense}点防御值")
+        turn+=1
+        -pause(pause_seconds)
+        result = get_battle_result(nagato_hp,nabiya_hp)
+
     #
     # TODO：双方回合完成后让 turn 增加 1，并根据 pause_seconds 调用 time.sleep()。
     # TODO：循环结束后调用 get_battle_result()，输出中文结果并返回 result。
-    pass  # noqa: PIE790
+    if result =="nagato":
+        print("\n长门胜利")
+    elif result =="nabiya":
+        print("\n娜比娅获得胜利")
+    else:
+        print("\n两者平局")
+    return result
