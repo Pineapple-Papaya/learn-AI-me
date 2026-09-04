@@ -1,8 +1,9 @@
 """娜比娅偷吃事件：回合制战斗练习。"""
 
 from __future__ import annotations
-
+import random
 from typing import Literal
+
 
 Action = Literal["attack", "defend", "special"]
 NabiyaAction = Literal["attack", "defend"]
@@ -28,19 +29,30 @@ MAX_BATTLE_TURNS = 50
 def display_status(character_name: str, current_hp: int, max_hp: int) -> None:
     """输出角色状态，格式为：[角色名]HP: 当前生命值 / 最大生命值。"""
     # TODO：检查最大生命值是否合法，并使用 print() 输出角色状态。
-    pass  # noqa: PIE790
-
-
+    if max_hp<=0:
+        raise ValueError("最大生命值不能小等于0!")
+    else if current_hp < 0:
+        current_show_hp = 0
+    print(f"[{character_name}]HP: {current_show_hp}/ {max_hp}")
+    
 def roll_dice(num_dice: int) -> int:
     """投掷指定数量的六面骰子并返回点数总和。"""
     # TODO：先处理非法骰子数量，再用 while 循环调用 random.randint(1, 6)。
-    pass  # noqa: PIE790
+    if num_dice < 0:
+        raise ValueError("掷色子数量不能为负数!")
+    sum_dice = 0
+    num = num_dice
+    while(num > 0):
+        sum+=random.randint(1,6)
+        num-=1
+    return sum_dice
 
 
 def choose_nagato_action(nagato_hp: int, nabiya_hp: int) -> Action:
     """根据双方生命值选择长门的行动。"""
     # TODO：长门生命值低于 30 时防御，娜比娅生命值低于 20 时使用特殊攻击，
     # TODO：其余情况进行普通攻击；注意使用 if/elif/else 保持判断顺序。
+    if nagato_hp < 30
     pass  # noqa: PIE790
 
 
