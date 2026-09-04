@@ -52,56 +52,72 @@ def choose_nagato_action(nagato_hp: int, nabiya_hp: int) -> Action:
     """根据双方生命值选择长门的行动。"""
     # TODO：长门生命值低于 30 时防御，娜比娅生命值低于 20 时使用特殊攻击，
     # TODO：其余情况进行普通攻击；注意使用 if/elif/else 保持判断顺序。
-    if nagato_hp < 30
-    pass  # noqa: PIE790
-
+    if nagato_hp < NAGATO_LOW_HP_THRESHOLD:
+        return "defend"
+    else if nabiya_hp < NABIYA_SPECIAL_HP_THRESHOLD:
+        return "special"
+    return "attack"
 
 def calculate_attack_damage(num_dice: int) -> int:
     """调用 roll_dice() 计算基础攻击伤害。"""
     # TODO：把骰子数量传给 roll_dice()，并返回它的结果。
-    pass  # noqa: PIE790
+    return roll_dice(num_dice)
 
 
 def calculate_defense_value(num_dice: int) -> int:
     """调用 roll_dice() 计算本回合的防御值。"""
     # TODO：把骰子数量传给 roll_dice()，并返回它的结果。
-    pass  # noqa: PIE790
+    return roll_dice(num_dice)
 
 
 def check_critical_hit(base_damage: int) -> bool:
     """判断基础伤害是否达到暴击阈值。"""
     # TODO：当基础伤害大于等于 CRITICAL_HIT_THRESHOLD 时返回 True。
-    pass  # noqa: PIE790
+    if base_damage >= CRITICAL_HIT_THRESHOLD:
+        return True
 
 
 def nabiya_ai_action(nabiya_hp: int) -> NabiyaAction:
     """根据娜比娅生命值选择她的行动。"""
     # TODO：娜比娅生命值小于等于 40 时防御，否则攻击。
-    pass  # noqa: PIE790
+    if nabiya_hp<=NABIYA_DEFEND_HP_THRESHOLD:
+        return "defend"
+    else:
+        return "attack"
 
 
 def calculate_final_damage(base_damage: int, defense_bonus: int) -> int:
     """用防御值抵消基础伤害，并返回不会小于零的最终伤害。"""
     # TODO：拒绝负数伤害或防御值，再计算 max(0, 基础伤害 - 防御值)。
-    pass  # noqa: PIE790
-
+    if base_damage < 0:
+        return ValueError("基础伤害不能为负数")
+    elif defend_bonus < 0:
+        return ValueError("防御值不能为负数")
+    final_damage = max(0,base_damage-denfense_bonus)
+    return final_damage
 
 def apply_damage(current_hp: int, base_damage: int, defense_bonus: int = 0) -> int:
     """结算一次攻击并返回不会小于零的剩余生命值。"""
     # TODO：调用 calculate_final_damage()，再从当前生命值中扣除最终伤害。
-    pass  # noqa: PIE790
+    final_damage = calculate_final_damage(base_damage,defense_bonus)
+    current_hp = max(0,current_hp - final_damage)
+    return current_hp
 
 
 def is_battle_over(nagato_hp: int, nabiya_hp: int) -> bool:
     """判断是否至少有一名角色的生命值归零。"""
     # TODO：只要任意一方 HP 小于等于 0，就返回 True。
-    pass  # noqa: PIE790
+    return nagato_hp<=0 ornabiya_hp<=0
 
 
 def get_battle_result(nagato_hp: int, nabiya_hp: int) -> BattleResult:
     """根据双方剩余生命值返回胜者或平局。"""
     # TODO：仅一方存活时返回对应结果；双方同时归零或都存活时返回 draw。
-    pass  # noqa: PIE790
+    if nagato_hp > 0 and nabiya_hp <=0:
+        return "nagato "
+    if nabiya_hp > 0 and nagato_hp<=0:
+        return "nabiya"
+    return "draw"
 
 
 def main_battle_loop(
@@ -110,18 +126,38 @@ def main_battle_loop(
 ) -> BattleResult:
     """运行完整战斗，并返回 nagato、nabiya 或 draw。"""
     # TODO：先检查 pause_seconds 和 max_turns 是否合理，不合理时抛出 ValueError。
-    # TODO：初始化 nagato_hp、nabiya_hp、nagato_defense_bonus、
+    if pause_seconds < 0:
+        raise ValueError("暂停时间不能为负数")
+    if max_turns < 0:
+        raise ValueError("最大回合数不能为负数")
+    # TODO：初始化 nagato_hp、nabiya_hp、nagato_defense_bonus
+    nagato_hp = NAGATO_MAX_HP
+    nabiya_hp = NABIYA_MAX_HP
+    nagato_defense_bonus = 0
     # TODO：nabiya_defense_bonus，以及从 1 开始的 turn。
-    #
+    nabiya_defense_bonus = 0
+    turn = 1
     # TODO：战斗循环可以按照下面的结构开始：
-    # while nagato_hp > 0 and nabiya_hp > 0 and turn <= max_turns:
+    while nagato_hp > 0 and nabiya_hp > 0 and turn <= max_turns:
+        print(f"        第{turn}回合     ")
     #     输出当前回合和双方状态。
+        display_status("长门",nagato_hp,NAGATO_MAX_HP)
+        display_status("娜比娅",nabiya_hp,NABIYA_MAX_HP)
     #
     # TODO：长门回合：
     # 1. 调用 choose_nagato_action(nagato_hp, nabiya_hp) 获取 action。
+        choose_nagato_action(nagato_hp,nabiya_hp)
     # 2. action == "attack" 时，调用 calculate_attack_damage()；
+        if action == "attack":
+            base_damage = calculate_attack_damage(NAGATO_ATTACK_DICE)
     #    如果 check_critical_hit() 返回 True，就把基础伤害翻倍。
+            if check_critical_hit(base_damage):
+                base_damage *= 2
+                print("触发 BIGSEVEN")
+                
     # 3. action == "defend" 时，调用 calculate_defense_value()，
+        else if action == "defend":
+            
     #    把结果保存到 nagato_defense_bonus。
     # 4. action == "special" 时，用 random.random() 判断是否小于
     #    SPECIAL_ATTACK_SUCCESS_RATE；成功时使用 SPECIAL_ATTACK_DAMAGE。
