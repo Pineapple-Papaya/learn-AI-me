@@ -1,2 +1,39 @@
 .DS_Store
 __pycache__
+# Local learning environment and private session data
+.venv/
+venv/
+.vscode/
+.idea/
+*.py[cod]
+.env
+.env.*
+*cookie*.json
+storage_state*.json
+auth-state*.json
+
+# Generated datasets and model files
+data/
+datasets/
+models/
+*.csv
+*.pt
+*.pth
+*.safetensors
+
+# Personal media stays outside Git; existing upstream assets remain tracked
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+*.bmp
+*.ico
+*.mp3
+*.wav
+*.flac
+*.mp4
+*.mov
+*.avi
+*.webm

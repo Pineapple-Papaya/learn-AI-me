@@ -1,0 +1,409 @@
+# Foundation 0 - 环境搭建
+
+> [!NOTE]
+> 预计耗时：10 天
+
+## 学习目的
+
+在一切开始之前，你应该学会一些计算机的基本素养，例如配环境。
+
+以及一些作为 CSer 最基本的技能。
+
+## 学习内容
+
+- 基本的计算机操作
+- 基本的环境配置
+- Python 语法基础
+
+## 学习要求
+
+本轮考核的目的在于熟悉作为 CSer 最基本的工作环境，以及跑通最基本的几个 Python 程序。
+
+## 作业
+
+在开始作业之前，请阅读：
+
+- [交作业指南](../../commit/work-commit.md)
+- [Git 学习](../../commit/git-study.md)
+
+以获得更好的支持。
+
+### 作业 1 - 环境搭建与基本工具的使用
+
+你应该参考推荐教程与参考资料中的内容（后文均略），在你的电脑上搭建好 Python 的开发环境。
+
+在完成本次作业后，你应该注意并使用正确的浏览器，学会基本的文件管理，学会使用基本的截图工具，自由访问需要的网站等。
+
+### 作业 2 - Git 基础使用与第一份 Markdown
+
+创建一个 GitHub 账号，并且创建一个名为 `learn-ai-username` 的仓库（其中 `username` 替换为你的 GitHub 用户名，或者你也可以自行命名）。
+
+在这个仓库中，你需要提交一个 `crazy-day.md` 文件，使用 Markdown 语法撰写一篇文章，内容自拟，要求至少包含以下元素：
+
+- 多级标题
+- 图片插入
+- 链接插入
+- 代码块
+- 表格
+
+你需要在你的 Markdown 文档里附上你的 Git 命令行或图形化操作界面，禁止直接拖拽上传 Github。
+
+你的 Markdown 文档需要通过 Markdown Lint 的基本检查，且需要至少保证如下 Apple 规范：
+
+![苹果文档规范示例](https://img.attilio.cc/api/cfile/AgACAgUAAyEGAAMBBU78tQACBI1qzskT_-29tCay3eylyN6xnlrFIQACGxFrG7fmeVaOGNMMj6LJ9QEAAwIAA3cAAz0E)
+
+### 作业 3 - Hello World
+
+在算法与代码编织的浩瀚世界里，每一位伟大的魔法师在踏上征途时，都会念出那句古老而神秘的咒语。这句咒语不仅代表着程序生命的诞生，更是你向整个计算机世界发出的第一声问候。
+
+现在，轮到你向这个世界打招呼了。
+
+#### 题目描述
+
+请编写一个程序，在你的 python 环境中打印出那句经典的问候语：`Hello, World!`
+
+#### 输入格式
+
+本题**没有**输入数据。
+
+#### 输出格式
+
+输出仅一行，包含一个字符串 `Hello, World!`。请注意大小写以及标点符号，末尾通常建议换行。
+
+#### 输入样例
+
+```text
+(无输入)
+```
+
+#### 输出样例
+
+```text
+Hello, World!
+```
+
+#### 时间与空间限制
+
+时间限制 (Time Limit): 1000ms
+
+内存限制 (Memory Limit): 256MB
+
+#### 说明与提示
+
+1. 大小写敏感：计算机对字母的大小写非常严格，请确保 `H` 和 `W` 为大写，其余字母为小写。
+2. 标点与空格：单词 `Hello` 与 `World` 之间有一个逗号 `,` 和一个半角空格 ` `，句尾包含一个英文叹号 `!`。
+3. 如果输出内容与要求有微小的差异（例如漏掉空格、使用了中文标点等），会判定为 **Wrong Answer (答案错误)** 或 **Presentation Error (格式错误)**。
+
+### 作业 4 - OI
+
+使用 Python 完成下列任务：
+
+1. 洛谷 P1001：<https://www.luogu.com.cn/problem/P1001>
+
+2. 洛谷 P1046：<https://www.luogu.com.cn/problem/P1046>
+
+3. 洛谷 P5737：<https://www.luogu.com.cn/problem/P5737>
+
+4. AtCoder ARC017A：<https://www.luogu.com.cn/problem/AT_arc017_1>
+
+5. ACM 集训队里一共有 $n$ 位学长，编号依次为 $1$ 到 $n$。每位学长初始时都有一个属于自己的名字。
+
+   如果编号为 $u$ 的学长喜欢上了编号为 $v$ 的学长，那么学长 $u$ 就会立刻把自己的名字更新为：`I_love_` 拼接上学长 $v$ **当前的名字**。
+
+   学长们的情感变化非常丰富，在经历了一共 $m$ 次“移情别恋”的记录后，请你输出编号为 $1$ 的学长最后所拥有的名字。
+
+   第一行输入一个正整数 $n$，表示学长的总人数。
+
+   接下来的 $n$ 行，每行包含一个由大小写英文字母和下划线组成的字符串，长度小于 $25$，依次代表编号为 $1$ 到 $n$ 的学长初始的名字。
+
+   第 $n + 2$ 行输入一个正整数 $m$，表示喜欢的记录总数。
+
+   接下来的 $m$ 行，每行包含两个正整数 $u$ 和 $v$（$1 \le u, v \le n$），用空格隔开，表示编号为 $u$ 的学长喜欢上了编号为 $v$ 的学长。
+
+   输出仅一行，包含一个字符串，表示编号为 $1$ 的学长最后的名字。
+
+   输入样例 1
+
+   ```text
+   5
+   anonymous
+   natalia
+   LeBron
+   Tanya_Romanova
+   MikeMirzayanov
+   6
+   1 2
+   3 4
+   2 1
+   4 3
+   1 4
+   3 2
+   ```
+
+   输出样例 1
+
+   ```text
+   I_love_I_love_I_love_Tanya_Romanova
+   ```
+
+   输入样例 2
+
+   ```text
+   2
+   MikhailRubinchik
+   evol_I
+   1
+   1 2
+   ```
+
+   输出样例 2
+
+   ```text
+   I_love_evol_I
+   ```
+
+### Bonus - 简单的 Python 程序
+
+#### 比较基础的 Python 程序
+
+1. 输入三个整数 x、y、z，请尝试用多种方式把这三个数由大到小输出
+2. 输出九九乘法表
+3. 输入一个字符串，判断字符串中是否含有 "ol" 这个子串，若有把所有的 "ol" 替换为 "fzu"，最后把字符串倒序输出
+4. 输入一个列表（list），列表中含有字符串和整数，删除其中的字符串元素，然后把剩下的整数升序排序，输出列表
+5. 创建一个字典（dict），为字典添加几个键为学号，值为姓名元素，删除学号尾号为偶数的元素，输出字典
+6. 创建一个函数，这个函数可以统计一个只有数字的列表中各个数字出现的次数，通过字典方式返回
+7. 设计一个商品类，它具有的私有数据成员是商品序号、商品名、单价、总数量和剩余数量。具有的 公有成员函数是：初始化商品信息的构造函数 `__init__`，显示商品信息的函数 display，计算已售出 商品价值 income，修改商品信息的函数 setdata
+8. 尝试用所学的知识写一个斗地主随机发牌程序，将每个人的发牌以及多的三张牌的结果分别输出到 player1.txt，player2.txt，player3.txt，others.txt 四个文件中，可以不要求牌的花色
+
+#### 相对进阶的 Python 程序
+
+1. 实现一个装饰器，在开始执行函数时输出该函数名称，并在结束时输出函数的开始时间和结束时间以及运行时间
+2. 用所学的知识写一个斗地主随机发牌程序，将每个人的发牌以及多的三张牌的结果分别按照从大到小的顺序输出到 player1.txt，player2.txt，player3.txt，others.txt 四个文件中
+3. 写一个列表推导式，生成一个 5*10 的矩阵，矩阵内的所有值为 1，再写一个列表推导式，把这个矩阵转置
+4. 了解类的魔术方法（Magic Method）。创建类 MyZoo，实现以下功能：
+    - 具有字典 `animals`，动物名称作为 key，动物数量作为 value
+    - 实例化对象的时候，输出 "My Zoo!"
+    - 创建对象的时候可以输入字典进行初始化，若无字典传入，则初始化 `animals` 为空字典
+
+    ```python
+    myzoooo = MyZoo({"pig":5,'dog':6}) 
+    myzoooo = MyZoo() 
+    ```
+
+    - print(myzoooo) 输出 动物名称和数量
+    - 比较两个对象是否相等时，只要动物种类一样，就判断相等：
+
+        ```python
+        输入：
+        myzoooo1 = MyZoo({'pig':1})
+        myzoooo2 = MyZoo({'pig':5})
+        print(myzoooo1 == myzoooo2)
+        输出：
+        My Zoo!
+        My Zoo!
+        True
+        ```
+
+    - len(myzoooo) 输出所有动物总数
+5. 写一个正则表达式，用于验证用户密码，长度在 6~18 之间，只能包含英文和数字
+
+## 推荐教程与参考资料
+
+### 疑难解答以及一些基本认知
+
+#### 是否需要好的显卡
+
+学习人工智能有一个好的显卡会有一定帮助，但并非刚需，你完全可以使用 [Colab](https://colab.research.google.com/) 或者 GPU 云服务器来进行机器学习代码的编写和运行。
+
+#### 英语的学习
+
+学习人工智能，英语是必要的，可以使用插件「沉浸式翻译」或大语言模型辅助。
+
+#### 浏览器的使用
+
+请使用 Edge 或 Chrome，它们对各类开发工具和现代网页技术的兼容性最好，能为你减少很多不必要的麻烦。
+
+#### 截图工具的使用
+
+Windows 用户可以使用 `Win + Shift + S` 快捷键调出截图工具，Mac 用户可以使用 `Command + Shift + 4` 快捷键进行截图。
+
+实在不会截图请使用 QQ 截图，快捷键通常是 `Ctrl + Alt + A`，不可以使用手机拍照。
+
+#### 如何卸载
+
+Windows 用户可以通过「控制面板」中的「程序和功能」来卸载软件，Mac 用户可以将应用程序拖动到废纸篓中进行卸载。
+
+需要注意的是，不可以直接删除安装目录来卸载软件，这样可能会留下残余文件和注册表项，导致系统不稳定或占用磁盘空间。
+
+#### 如何提问
+
+你需要在提问之前仔细思考自己这个问题是否合理。提问需要附上源码，错误信息，错误截图，复现步骤等相关信息，不接受任何无图的提问。
+
+#### 大语言模型的使用
+
+不限制大语言模型的使用，但你需要对大语言模型生成的内容做到足够了解，并且确保可以复现。
+
+可以阅读 [如何使用 AI](https://blog.attilio.cc/posts/post-7/) 来获取相关信息。
+
+### 魔法工具
+
+你需要自行寻找科学上网工具并且注册谷歌账号，请自行通过 taobao or xianyu 研究。
+
+实在找不到的可以私聊当年负责人。
+
+### 安装 Python
+
+访问 [Python 官方网站](https://www.python.org/downloads/) 下载并安装 Python 3.x 版本。
+
+下载的时候请选择 Add Python 3.x to PATH 选项以便在命令行中使用 Python。如果你没有做这一步，最简单的方法是卸载后重新下载。
+
+> [!TIP]
+> 对于 Python 的版本，我的建议是固定使用 Python 3.12.3 版本，这是目前很多主流 AI 框架支持的比较新的版本，也是 Ubuntu 24.04 LTS 默认支持的版本。
+>
+> 对于 Python 3.13 / 3.14 等较新版本，部分 AI 框架的支持可能还不够完善。
+>
+> Python 属于是一个对版本变化非常敏感的语言，很多东西你只要改了一个小版本号，然后代码就全炸了。
+>
+> 这里贴出 Python 3.12.3 的下载链接：
+>
+> <https://www.python.org/downloads/release/python-3123/>
+
+### 安装 IDE 集成开发环境
+
+初学者可以选择使用 [PyCharm](https://www.jetbrains.com.cn/pycharm/)，可以 [申请学生免费许可证](https://blog.jetbrains.com/zh-hans/blog/2022/08/24/2022-jetbrains-student-program/) 以使用专业版。
+
+个人更建议使用 [VS Code](https://code.visualstudio.com/)（主要是 PyCharm 的 Jupyter Notebook 太过难用，建议初学者可以多使用 Jupyter 来编写程序）。
+
+> [!TIP]
+> 在下载 VS Code 后，请下载 Python 插件以获得更好的 Python 支持。
+
+### 清华源
+
+在中国大陆访问 PyPI 官方源可能会比较慢，因此建议使用清华大学提供的 PyPI 镜像源来加速包的下载。你可以通过以下命令临时使用清华源：
+
+```bash
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+```
+
+### Python 虚拟环境的配置
+
+在未来的学习中，由于不同项目可能会依赖不同版本的库，因此建议使用虚拟环境来隔离项目的依赖，避免版本冲突。
+
+最简单的方法是使用 `venv`，这是 Python 内置的虚拟环境工具，可以通过以下命令创建和激活虚拟环境：
+
+```bash
+python -m venv myenv
+source myenv/bin/activate  # Linux/Mac
+myenv\Scripts\activate  # Windows
+```
+
+当然，更推荐使用 [uv](https://uv.oaix.tech/)，这是一个更现代的 Python 虚拟环境管理工具，提供了更简洁的命令和更好的性能，最重要的是它支持并发安装依赖，极大地提升了安装速度。
+
+你也可以使用 [miniconda](https://docs.anaconda.com/miniconda/) 来管理环境，它轻量且功能强大。但是 Conda 会污染命令窗口，因此这里不作首选推荐。
+
+初学者一定要注意环境相关的问题，从一开始就养成好的习惯。
+
+如果你想对虚拟环境有进一步的了解，并且获得 step by step 的指导，可以阅读 [柠檬味氨水](https://github.com/weijianxian) 的博客 [uv 如何使用](https://blog.weijx.vip/p/uv%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8/)。
+
+> [!TIP]
+> 关于虚拟环境，初学者往往嫌麻烦，不过简单的东西确实没必要起繁琐的虚拟环境，你现在可以先在全局里跑。
+>
+> 等你哪一天环境炸了，自然会来研究。
+
+### Markdown 基础
+
+Markdown 是一种轻量级标记语言，排版语法简洁。它使用易读易写的纯文本格式编写文档，可与 HTML 混编，也可导出 HTML、PDF 等文件。因简洁、高效、易读、易写，Markdown 被大量使用，如 GitHub、Wikipedia 等。
+
+在线体验一下 [Markdown 在线编辑器](https://markdown.com.cn/editor/)。
+
+对于未来的文档作业，我们要求你使用 Markdown 或者 Jupyter Notebook 来编写。
+
+Markdown 语法并不复杂，建议初学者只需掌握基本语法即可，如标题、列表、加粗、斜体、链接、代码块等。进阶语法如脚注、任务列表等可根据需要学习。
+
+[Markdown 基本语法学习](https://markdown.com.cn/basic-syntax/)
+
+[Markdown 规范检查](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+
+> [!TIP]
+> 你可以直接在 VS Code 里编写 Markdown 文件，然后使用快捷键 `Ctrl+Shift+V` 进行预览。
+>
+> 需要注意的是，VS Code 自带预览与 GitHub（GFM）的渲染效果存在差异，建议下载 GitHub Markdown Preview 插件以获得更好的兼容性。
+
+### 苹果文档规范
+
+文档规范在作业 2 已经大体讲过，这里不再列举具体的例子。
+
+- 中英文之间需要增加空格
+- 中文与数字之间需要增加空格
+- 数字与单位之间无需增加空格
+- 全角与半角不能混用
+
+手动敲空格不仅容易眼花，还容易漏掉。推荐使用开源工具 autocorrect，它可以自动识别并纠正文档中全半角符号、中英文/数字之间无空格等排版问题。
+
+```zsh
+npm install -g autocorrect-node
+```
+
+随后在根目录运行：
+
+```zsh
+autocorrect --fix **/*.md
+```
+
+批量修正所有 Markdown 文件的格式为 Apple 格式。
+
+此外，你可以下载并使用 [微信输入法](https://z.weixin.qq.com/)，借助其自动在中英文与数字之间添加空格的功能来辅助排版。
+
+### Python 基础
+
+1. Crossin 编程教室 [Python 入门指南](https://python666.cn/cls/lesson/list/)
+2. Python - 100 天从新手到大师的前 10 节课 [jackfrued/Python-100-Days](https://github.com/jackfrued/Python-100-Days)
+3. Python 官方文档 [3.12 Documentation](https://docs.python.org/zh-cn/3.12/)
+4. 菜鸟教程 [Python3 教程](https://www.runoob.com/python3/python3-tutorial.html)
+5. 廖雪峰的官方教程 [Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+6. B 站上有大量的入门基础课程，大家可以自行探索，找到适合自己的是最好的。
+
+> [!TIP]
+> 对于教程，不需要全部都看，只需要挑选几个自己喜欢的，边学边写。
+>
+> 需要注意的是，希望你在度过最前期的语法阶段之后，后续的学习应该采用阅读文档的方式，而不是看视频。
+
+### 代码风格
+
+#### Pylance 与其平替工具
+
+现代编辑器提供了多种代码辅助工具来提升开发效率，其中 VS Code 中的 Pylance 就是一个典型代表。
+
+- VS Code 用户：安装 Python 扩展时会自动附带 Pylance，无需额外安装或配置，开箱即用。
+- PyCharm 用户：PyCharm 已内置了与 Pylance 功能相当的代码智能支持，同样开箱即用，无需额外插件。
+- 其他编辑器用户（如 Cursor 等）：推荐使用 basedpyright + Ruff 的组合进行平替，兼顾类型检查与代码质量。
+  - [basedpyright](https://github.com/DetachHead/basedpyright)
+  - [ruff](https://github.com/astral-sh/ruff)
+
+#### PEP 8 规范
+
+[PEP 8 -- Style Guide for Python Code](https://peps.python.org/pep-0008/)
+
+在一开始学习的时候，不强制使用 PEP 8 规范，但是建议你养成良好的代码风格习惯。
+
+#### Main 函数编写与 VS Code 直接运行
+
+虽然 Python 可以直接运行脚本，但还是建议写一个 main 函数做简单封装。
+
+VS Code 等集成开发环境右上角有一个运行按钮，建议搞明白这个是什么之后再使用一键运行的按钮。
+
+否则请开一个终端，使用：
+
+```bash
+python your_script.py
+```
+
+#### 代码格式化
+
+手写的代码经常黏黏糊糊一大坨，写起来方便，但是阅读起来就很痛苦，而好的代码风格能大大提升代码的可读性和可维护性。
+
+VS Code 推荐使用 black formatter(vs code) <https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter>，然后在设置中打开 <vscode://settings/editor.formatOnSave> 自动格式化。
+
+Pycharm 建议直接使用内置的代码格式化功能，其他编辑器可使用上面推荐的 ruff 进行代码格式化。
+
+默认快捷键 `Alt+Shift+F` 进行代码格式化，推荐打开 `保存时自动格式化`
