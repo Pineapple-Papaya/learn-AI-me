@@ -1,9 +1,14 @@
 # python
 
+> 本文件对应 Foundation 1“文档 1”，是正式学习笔记；速查表只是辅助资料。
+> 新增部分根据本人在对话中的回答与错误，由 Codex 辅助整理，供本人复核。
+> 模板位置和未完成项见 [Task1 任务入口](README.md)，未学内容不预填为已掌握。
+
 ## 字符编码
 
-Unicode把所有语言都统一到一套编码里，但如果所写文本均为英文，Unicode比ASCII编码需要多一倍的存储空间
-UTF-8编码把一个Unicode字符根据不同的数字大小编码成1-6个字节，常用的英文字母被编码成1个字节，汉字通常是3个字节，只有很生僻的字符才会被编码成4-6个字节。如果你要传输的文本包含大量英文字符，用UTF-8编码就能节省空间。
+Unicode 是字符标准，不是某一种固定字节数的存储方式；实际字节数取决于所用编码。
+现代 UTF-8 使用 1–4 个字节编码一个 Unicode 标量值；ASCII 范围字符用 1 个字节，
+常见汉字通常用 3 个字节。不能笼统地说 Unicode 存英文一定比 ASCII 多一倍。
 
 ## List列表
 
@@ -26,7 +31,7 @@ match case  case _表示其他所有情况
 ## dict
 
  d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
- 作为key的对象就不能变。在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key
+ 字典的 key 必须可哈希。字符串、整数通常可作为 key；list 不能直接作为 key。
 
 ## set
 
@@ -47,8 +52,16 @@ match case  case _表示其他所有情况
 - 和`*numbers`区别：`*`打包成 tuple；`**`打包成 dict
 
 ```python
+def person(name, age, **kw):
+    print("name:", name, "age:", age, "other:", kw)
+
 extra = {'city': 'Beijing', 'job': 'Engineer'}
- person('Jack', 24, **extra)
+person('Jack', 24, **extra)
+```
+
+输出：
+
+```text
 name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
 ```
 
@@ -81,3 +94,72 @@ def person(name, age, *, city, job):
 ## 递归函数
 
 在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数.
+
+## 函数输入、打印与返回
+
+- 调用 `total(4, 6)` 时，实参 4、6 分别交给函数的形参。
+- `print()` 显示内容，`return` 把结果交给调用者；显示内容不等于返回值。
+- 没有执行 `return` 的函数默认返回 `None`。
+- 执行 `return` 后当前函数立即结束，后面的语句不再执行。
+
+本人的实际错误：曾把只打印结果的函数也判断为返回 `5`；讲解后补对 `return a + b`，
+并正确判断 `return` 后的打印不执行。
+
+## Lambda 与排序规则
+
+Lambda 的写法是 `lambda 参数: 返回表达式`，适合只有一个返回表达式的小函数。
+
+本人已写出的例子：
+
+```python
+add_ten = lambda x: x + 10
+print(add_ten(5))  # 15
+```
+
+排序规则的完整例子：
+
+```python
+students = [("Tom", 80), ("Jerry", 95), ("Alice", 70)]
+result = sorted(students, key=lambda student: student[1])
+print(result)
+```
+
+`sorted()` 逐个取出列表元素，传给 `key` 指定的函数，用它的返回值作为排序依据，
+返回排好序的完整记录。`student` 是当前一条记录；`student[1]` 取得这条记录的成绩。
+
+## Decorator 装饰器基础
+
+装饰器接收原函数，返回包装函数。定义时完成包装，之后调用装饰后的函数，
+执行包装函数，再由它调用保存的原函数。
+
+```python
+def with_log(func):
+    def first():
+        print("开始执行")
+        func()
+        print("执行结束")
+    return first
+
+@with_log
+def study():
+    print("学习 Python")
+
+study()
+```
+
+此处 `@with_log` 等价于定义之后执行 `study = with_log(study)`。
+`return first` 属于外层 `with_log`，与 `def first()` 对齐。
+本人曾把它写进内部函数，导致外层没有返回包装函数；这部分已针对性讲解，示例辅助运行通过。
+
+## Day 2 已做的基础练习
+
+- `.get(键, 默认值)` 查询一个键，找不到时返回默认值；不是一次传入多个候选键。
+- 完整上下文是先定义礼物字典，再用 `gift = input(...)` 保存输入，最后查询 `effects.get(gift, 0)`。
+- 本人正确判断：礼物“巧克力”不在示例字典时，默认结果为 `0`。
+- 本人已写对 `affinity += change` 与 `affinity >= 100`。
+- 这些是基础知识练习，尚未回填校园模板，不代表模板送礼功能已经完成。
+
+## 后续必做待补
+
+Class、`self`、对象属性、Magic Methods、OOP、`re`、列表推导式、Type Hint、generator/`yield`。
+学会对应基础后再回填实际模板；完整笔记最终由本人复核、补充自己的理解。
