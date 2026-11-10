@@ -10,11 +10,14 @@
 | --- | --- | --- |
 | 文档 1：Python 笔记 | [note.md](note.md) | 沿用本人已有笔记，补入已学内容；没有固定代码模板 |
 | 作业 1：娜比娅 | [作业1.py][battle] | 个人作业的唯一正式入口，包含原模板的 12 个函数 |
-| 作业 2：校园 | [官方框架][campus] | 基础知识学够后，按原类、方法、字典和 TODO 完成 |
+| 作业 2：校园 | [个人作业模板][campus] | 由官方框架原样复制，逐步填写原类、方法和 TODO |
 | 文档 2：终端复盘 | 待所选代码作业完成后撰写 | 不提前编造问题与复盘 |
 
 [battle]: 作业1.py
-[campus]: ../docs/work-2026/foundation/Campus_IF_Love/Campus_IF_Love.py
+[campus]: Campus_IF_Love/Campus_IF_Love.py
+
+校园的原框架来源保留在 `docs/work-2026/foundation/Campus_IF_Love/`。
+个人作业统一在 `Task1/Campus_IF_Love/` 修改；目录中的原剧本、README 一并复制供对照。
 
 此前漏替换的 `Task1/作业1.py` 已用完整实现覆盖，旧的 14 行草稿保留在 Git 历史中。
 `docs/work-2026/foundation/Nabia_Snack_Incident/` 保留模板来源、先前实现和检查资料。
@@ -64,7 +67,12 @@ python Task1/作业1.py
    按原选项处理聊天、送礼、查看好感度与退出。
 6. 后两条路线回到 `scene_xiaobai`、`scene_jiejie` 的 TODO，随后完成拆文件与 Type Hint。
 
-今天只开始第一条路线；未完成的模板任务不能因为基础练习通过就标为完成。
+Day 2 仅完成第一条基础路线；未完成的模板任务不能因为基础练习通过就标为完成。
+当前已在个人模板完成送礼、各角色首条对话和主菜单，测试见该目录 `test_campus.py`。
+三条基础路线及入口无效输入已接通，30/30 回归通过；4 个业务文件已通过严格类型检查。
+已拆成数据、角色、游戏流程、启动入口 4 个业务文件；问题总结见校园目录 `ISSUES.md`。
+本轮校园必做已通过本地验证与独立代码复核；2026-11-10 本人确认统一提交推送，Bonus 未开始。
+当日总结见 [Day 2 一页速查](day2-cheatsheet.md)，对象调用与循环控制次日先复测。
 
 ## 文件与 Git 同步
 

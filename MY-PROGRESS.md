@@ -1,6 +1,6 @@
 # 个人作业与迁移进度
 
-> 核对日期：2026-11-09。本文件优先于迁移前学习计划中的旧进度描述。
+> 核对日期：2026-11-10。本文件优先于迁移前学习计划中的旧进度描述。
 
 ## 作业入口
 
@@ -12,6 +12,8 @@
 - 修复速查与运行方法：[`FIX-NOTES.md`](docs/work-2026/foundation/Nabia_Snack_Incident/FIX-NOTES.md)，用于后续本人理解验证。
 - 早期 14 行草稿可通过 Git 历史查看，不再以同路径的旧内容充当当前作业。
 - Python 笔记：[`Task1/note.md`](Task1/note.md)。
+- 校园个人作业：[`Task1/Campus_IF_Love/Campus_IF_Love.py`](Task1/Campus_IF_Love/Campus_IF_Love.py)，必做已完成，4 个业务文件、11 个方法已补类型注释，30/30 回归、严格类型检查及独立代码复核通过；问题总结已写，2026-11-10 经本人确认统一提交推送。
+- Day 2 总结：[`Task1/day2-cheatsheet.md`](Task1/day2-cheatsheet.md)，指导完成的功能与独立掌握分开记录。
 - 旧 Foundation 0 作业：[`Task0`](Task0)。
 - 当前学习计划：[`foundation-14-day-plan.md`](foundation-14-day-plan.md)。
 - 模板、主笔记和作业的统一入口：[`Task1/README.md`](Task1/README.md)。

@@ -3,6 +3,7 @@ __pycache__
 # Local learning environment and private session data
 .venv/
 venv/
+.mypy_cache/
 .vscode/
 .idea/
 *.py[cod]
