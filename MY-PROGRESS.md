@@ -4,11 +4,13 @@
 
 ## 作业入口
 
-- 当前娜比娅作业：[`longmen_vs_nabiya.py`](docs/work-2026/foundation/Nabia_Snack_Incident/longmen_vs_nabiya.py)。保留 fork 的三次个人提交历史，在原实现基础上由 Codex 辅助修复。
+- 当前娜比娅作业：[`Task1/作业1.py`](Task1/作业1.py)，已覆盖原来的 14 行草稿，包含完整的 12 个模板函数。
+- 验证个人作业：[`Task1/check_nabiya.py`](Task1/check_nabiya.py)，明确加载上面的文件，再运行官方检查器与回归测试。
+- 模板来源及先前实现：[`longmen_vs_nabiya.py`](docs/work-2026/foundation/Nabia_Snack_Incident/longmen_vs_nabiya.py)。
 - 官方检查器：[`check_my_code.py`](docs/work-2026/foundation/Nabia_Snack_Incident/check_my_code.py)。
 - 边界回归测试：[`test_battle.py`](docs/work-2026/foundation/Nabia_Snack_Incident/test_battle.py)。
 - 修复速查与运行方法：[`FIX-NOTES.md`](docs/work-2026/foundation/Nabia_Snack_Incident/FIX-NOTES.md)，用于后续本人理解验证。
-- 早期草稿：[`Task1/作业1.py`](Task1/作业1.py)，只包含两个函数，保留作参考，后续不把它当正式提交入口。
+- 早期 14 行草稿可通过 Git 历史查看，不再以同路径的旧内容充当当前作业。
 - Python 笔记：[`Task1/note.md`](Task1/note.md)。
 - 旧 Foundation 0 作业：[`Task0`](Task0)。
 - 当前学习计划：[`foundation-14-day-plan.md`](foundation-14-day-plan.md)。
@@ -24,7 +26,8 @@
 - 2026-11-09 再次获取上游：`a3379b1` 已包含在当前 `main` 历史中，无新增上游更新需要合并。
 - “实现检查通过”不代表本人已掌握或负责人已验收。按本人最新要求，L2 的函数解释、手算一轮与独立变式统一移到 Day 4；今天不做娜比娅个人理解验收。
 - 迁移前旧目录中的两个函数、笔记和计划已保留；迁移后使用 Python 3.12.3 再次运行 Hello World 与四道 OJ，13/13 组本地自测通过，未核实线上 Accepted。
-- 迁移当时逐文件比对通过：迁入的 Task0/Task1 内容与源目录一致，娜比娅正式文件与 fork 原提交一致；本次仅继续修复正式文件，旧草稿保持原样。
+- 迁移当时逐文件比对通过；随后先修复了 docs 下的实现，但漏替换 Task1 入口。
+  2026-11-10 已纠正该路径问题，以 `Task1/作业1.py` 作为正式个人作业。
 - 旧代码有原有尾随空格及文件尾空行，差异格式检查会提示，迁移时未改动这些源码格式。新增说明与忽略规则另行通过差异格式检查。
 
 ## 迁移边界

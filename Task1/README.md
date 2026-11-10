@@ -9,15 +9,27 @@
 | 官方任务 | 当前对应文件 | 使用方式 |
 | --- | --- | --- |
 | 文档 1：Python 笔记 | [note.md](note.md) | 沿用本人已有笔记，补入已学内容；没有固定代码模板 |
-| 作业 1：娜比娅 | [正式实现][battle] | 原模板的 12 个函数；修复在此文件内完成 |
+| 作业 1：娜比娅 | [作业1.py][battle] | 个人作业的唯一正式入口，包含原模板的 12 个函数 |
 | 作业 2：校园 | [官方框架][campus] | 基础知识学够后，按原类、方法、字典和 TODO 完成 |
 | 文档 2：终端复盘 | 待所选代码作业完成后撰写 | 不提前编造问题与复盘 |
 
-[battle]: ../docs/work-2026/foundation/Nabia_Snack_Incident/longmen_vs_nabiya.py
+[battle]: 作业1.py
 [campus]: ../docs/work-2026/foundation/Campus_IF_Love/Campus_IF_Love.py
 
-`Task1/作业1.py` 是迁移前的早期草稿，正式娜比娅作业以表中路径为准。
+此前漏替换的 `Task1/作业1.py` 已用完整实现覆盖，旧的 14 行草稿保留在 Git 历史中。
+`docs/work-2026/foundation/Nabia_Snack_Incident/` 保留模板来源、先前实现和检查资料。
+后续填写、阅读与修改个人娜比娅作业统一使用 `Task1/作业1.py`。
 `day1-cheatsheet.md` 是复习资料，不替代正式笔记。
+
+在项目根目录选择 Python 3.12.3 后运行：
+
+```powershell
+python Task1/check_nabiya.py
+python Task1/作业1.py
+```
+
+第一条命令明确加载 `Task1/作业1.py`，再复用原官方检查器和回归测试；
+第二条直接演示这份个人作业。官方检查器、参考答案均保持原样。
 
 ## 娜比娅与原模板的对应关系
 

@@ -25,7 +25,9 @@
 
 先看 `git status` 和 diff，小步修改，运行对应检查器；展示变更摘要和结果，经本人确认再 commit。个人媒体、Cookie、密钥、数据集、模型和虚拟环境均不提交。
 
-正式娜比娅作业位于 `docs/work-2026/foundation/Nabia_Snack_Incident/`；旧草稿与正式文件的区别见 [MY-PROGRESS.md](MY-PROGRESS.md)。
+正式个人娜比娅作业为 `Task1/作业1.py`，使用 `python Task1/check_nabiya.py` 验证。
+`docs/work-2026/foundation/Nabia_Snack_Incident/` 用于来源对照和检查资料；
+入口说明见 [MY-PROGRESS.md](MY-PROGRESS.md)。
 
 ## 后续获取官方更新
 
